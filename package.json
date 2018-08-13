@@ -1,0 +1,35 @@
+{
+  "name": "aummstudio",
+  "version": "1.0.0",
+  "description": "AummStudio MySite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aumkung/AummStudio.git"
+  },
+  "keywords": [
+    "AummStudio"
+  ],
+  "author": "bobo083",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aumkung/AummStudio/issues"
+  },
+  "homepage": "https://github.com/aumkung/AummStudio#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "node-sass": "^4.9.3",
+    "axios": "^0.18",
+    "popper.js": "^1.12",
+    "cross-env": "^5.1",
+    "jquery": "^3.2",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "gulp-sass": "^4.0.1",
+    "webpack": "^4.16.5"
+  }
+}
