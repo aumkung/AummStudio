@@ -5,6 +5,8 @@ var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('css', function(){
   return gulp.src('public/css/app.css')
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.min.css'))
     .pipe(minifyCSS())
     .pipe(gulp.dest('public/css'))
 });
