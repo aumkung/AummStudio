@@ -1,81 +1,155 @@
-@import '../css/normalize.css';
-@import '../../node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=thai');
-@import url('../../node_modules/hover.css/css/hover.css');
-@import url('../../node_modules/@fortawesome/fontawesome-free/css/all.min.css');
+@import '../css/normalize.css';
+@import './node_modules/bootstrap/scss/bootstrap';
+@import '/node_modules/hover.css/css/hover.css';
+// @import './node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+// @import './node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+// @import './node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+// @import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
 
 $logofonts: 'Julius Sans One', sans-serif;
 $font-main: 'Kanit', sans-serif;
-$main-color: #FFB133;
+$main-color: #FBD56B;
 
 body {
     font-family: $font-main;
 }
+
 h1,h2,h3,h4,h5 {
     font-family: $font-main;
 }
 
-#app {
-    .navbar {
+.navbar {
+    width: 100%;
+    height: 54px;
+    background-color: #FBD56B;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    &-main {
+        display: flex;
+        justify-content: space-between;
         width: 100%;
-        height: 72px;
-        background-color: #FFB133;
-        border-bottom: 5px solid #EDDFC8;
-        &-canvas {
-            position: absolute;
-            width: 100%;
-            background-color: $main-color;
-            top: 67px;
-            left: 0;
-            z-index: 1;
-            height: 35vh;
-            @include media-breakpoint-up(md) {
-                right: 0;
-                left: auto;
-                width: 350px;
-            }
+        height: 100%;
+        align-items: center;
+    }
+    &-brand {
+        a {
+            font-size: 1em;
+            color: #000000;
+            font-family: $logofonts;
+        }
+    }
+    &-menu {
+        button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: #3333339c;
+            font-size: 1.4em;
+        }
+    }
+    &-canvas {
+        position: absolute;
+        width: 100%;
+        background-color: $main-color;
+        top: 67px;
+        left: 0;
+        z-index: 1;
+        height: 35vh;
+        visibility: hidden;
+        @include media-breakpoint-up(md) {
+            right: 0;
+            left: auto;
+            width: 350px;
         }
     }
 }
+
+// .nav-cher {
+//     position: absolute;
+//     width: 100%;
+//     .brand {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+//         align-items: center;
+//         max-width: 1200;
+//         margin: 0 auto;
+//         .brand-left {
+//             color: #fff;
+//             font-size: 3em;
+//             display: flex;
+//         }
+//         .brand-right {
+//             display: flex;
+//             a {
+//                 color: #fff;
+//                 font-size: 2em;
+//             }
+//         }
+//     }
+// }
+
 .home {
     .profile {
         display: flex;
         justify-content: center;
         padding: 10px;
         .profile-border {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 2px solid #FFB133;
+            border: 5px solid #FBD56B;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
             .profile-background {
-                width: 100px;
-                height: 100px;
-                background-image: url(/public/images/profile.png);
-                background-size: cover;
+                width: 150px;
+                height: 150px;
+                background-image: url(/public/images/profile2.jpg);
+                background-size: contain;
                 border-radius: 50%;
             }
             @include media-breakpoint-up(md) {
-                width: 150px;
-                height: 150px;
+                width: 300px;
+                height: 300px;
                 .profile-background {
-                    width: 150px;
-                    height: 150px;
+                    width: 300px;
+                    height: 300px;
                 }
             }
         }
     }
+    .cher-background {
+        width: 100%;
+        height: 100%;
+        background-image: url(/public/images/cher.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        .overlay-cher {
+            background-color: #000000;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+    }
+    .cher-background:hover {
+        .overlay-cher {
+            opacity: 0.5;
+            transition:all 0.3s ease-in-out;
+        }
+    }
 }
+
 .footer {
     width: 100%;
     height: 184px;
     background-color: lighten(#000000, 10%);
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     border-top: 5px solid #EDDFC8;
     .text-footer {
         color: #fff;

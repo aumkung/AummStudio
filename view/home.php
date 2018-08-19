@@ -7,7 +7,6 @@
                         <div class="profile-border">
                             <div class="profile-background hvr-grow"></div>
                         </div>
-                        <!-- <img class="thumbnail" src="public/images/thumbnail.png" alt="myyu"> -->
                     </div>
                 </div>
             </div>
