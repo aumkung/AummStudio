@@ -1,45 +1,94 @@
 @import '../css/normalize.css';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=thai');
+@import url('../../node_modules/hover.css/css/hover.css');
+@import url('../../node_modules/@fortawesome/fontawesome-free/css/all.min.css');
 
 $logofonts: 'Julius Sans One', sans-serif;
+$font-main: 'Kanit', sans-serif;
+$main-color: #FFB133;
 
-  #app {
-    .top-bar {
+body {
+    font-family: $font-main;
+}
+h1,h2,h3,h4,h5 {
+    font-family: $font-main;
+}
+
+#app {
+    .navbar {
         width: 100%;
         height: 72px;
         background-color: #FFB133;
         border-bottom: 5px solid #EDDFC8;
-        .menu {
-            display: flex;
-            align-items: center;
-            height: 72px;
-            // transition: 0.5s ease all;
-            a {
-                color: #000;
-                padding: 10px;
-                background-color: #FFB133;
-                margin-left: 20px;
-                font-family: $logofonts;
-                height: 100%;
-                font-size: 2em;
-                border-bottom: 5px solid #EDDFC8;
-                // transition: 0.5s ease all;
-                .line {
-                    border-bottom: 10px solid #EDDFC8;
-                    width: 200px;
-                    position: absolute;
-                    top: 53px;
-                    left: -212px;
-                    transition: 0.1s ease all;
-                } 
-            }
-            a:hover {
-                text-decoration: none;
-                .line {
-                    left: 26px;
-                } 
+        &-canvas {
+            position: absolute;
+            width: 100%;
+            background-color: $main-color;
+            top: 67px;
+            left: 0;
+            z-index: 1;
+            height: 35vh;
+            @include media-breakpoint-up(md) {
+                right: 0;
+                left: auto;
+                width: 350px;
             }
         }
     }
-  }
+}
+.home {
+    .profile {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        .profile-border {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #FFB133;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            .profile-background {
+                width: 100px;
+                height: 100px;
+                background-image: url(/public/images/profile.png);
+                background-size: cover;
+                border-radius: 50%;
+            }
+            @include media-breakpoint-up(md) {
+                width: 150px;
+                height: 150px;
+                .profile-background {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+.footer {
+    width: 100%;
+    height: 184px;
+    background-color: lighten(#000000, 10%);
+    position: absolute;
+    bottom: 0;
+    border-top: 5px solid #EDDFC8;
+    .text-footer {
+        color: #fff;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        p {
+            font-family: $font-main;
+            font-weight: 200;
+            span {
+                font-weight: 700
+            }
+        }
+    }
+}
